@@ -53,12 +53,21 @@ class PlaySoundsViewController: UIViewController {
         stopAudio()
     }
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         setupAudio()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureUI(.notPlaying)
+        snailButton.imageView?.contentMode = .scaleAspectFit
+        chipmunkButton.imageView?.contentMode = .scaleAspectFit
+        rabbitButton.imageView?.contentMode = .scaleAspectFit
+        vaderButton.imageView?.contentMode = .scaleAspectFit
+        echoButton.imageView?.contentMode = .scaleAspectFit
+        reverbButton.imageView?.contentMode = .scaleAspectFit
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        stopAudio()
     }
 }
